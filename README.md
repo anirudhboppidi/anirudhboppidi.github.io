@@ -1,4 +1,4 @@
-# Anirudh Reddy Boppidi - Portfolio
+# Anirudh Reddy Boppidi - Portfolio Website
 
 A modern, responsive portfolio website showcasing my work as a Software Development Engineer at Amazon Business.
 
