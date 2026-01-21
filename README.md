@@ -1,16 +1,102 @@
-# React + Vite
+# Anirudh Reddy Boppidi - Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive portfolio website showcasing my work as a Software Development Engineer at Amazon Business.
 
-Currently, two official plugins are available:
+**Live Site:** [https://anirudhboppidi.github.io](https://anirudhboppidi.github.io)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## About Me
 
-## React Compiler
+I'm a Software Development Engineer (SDE-2) at Amazon Business with 5+ years of experience building high-end web applications and AI solutions. I specialize in Java, React, and AWS technologies.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Location:** Austin, Texas
+- **Email:** anirudh.boppidi@gmail.com
+- **LinkedIn:** [linkedin.com/in/anirudhboppidi](https://www.linkedin.com/in/anirudhboppidi/)
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Frontend
+- **React 19** - Latest version with improved performance
+- **Vite 6** - Fast build tool and development server
+- **CSS Modules** - Scoped styling without additional dependencies
+
+### Features
+- Single-page scroll layout with smooth navigation
+- Dark theme with modern professional aesthetic
+- Fully responsive design (mobile-first)
+- CSS animations and transitions
+- Accessible (WCAG compliant)
+
+## Project Structure
+
+```
+├── public/
+│   └── assets/              # Static assets
+├── src/
+│   ├── components/
+│   │   ├── Navbar/          # Fixed navigation with smooth scroll
+│   │   ├── Hero/            # Introduction section
+│   │   ├── About/           # Bio and experience highlights
+│   │   ├── Skills/          # Technical skills with progress bars
+│   │   ├── Projects/        # Project showcase cards
+│   │   ├── Contact/         # Contact form and info
+│   │   └── Footer/          # Footer with quick links
+│   ├── styles/
+│   │   └── global.css       # Global styles and CSS variables
+│   ├── App.jsx              # Main app component
+│   └── main.jsx             # Entry point
+├── .github/
+│   └── workflows/
+│       └── deploy.yml       # GitHub Actions deployment
+├── index.html
+├── package.json
+└── vite.config.js
+```
+
+## Sections
+
+1. **Hero** - Name, title, tagline, and call-to-action buttons
+2. **About** - Professional bio, experience highlights, and resume download
+3. **Skills** - Technical skills organized by category (Frontend, Backend, AWS, Data Science)
+4. **Projects** - Featured projects from Amazon and previous roles
+5. **Contact** - Contact form and social links
+6. **Footer** - Quick navigation and social links
+
+## Getting Started
+
+### Prerequisites
+- Node.js 18+
+- npm or yarn
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/anirudhboppidi/anirudhboppidi.github.io.git
+
+# Navigate to project directory
+cd anirudhboppidi.github.io
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+### Build for Production
+
+```bash
+# Create production build
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+## Deployment
+
+This site is automatically deployed to GitHub Pages using GitHub Actions. Any push to the `main` branch triggers a new deployment.
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
