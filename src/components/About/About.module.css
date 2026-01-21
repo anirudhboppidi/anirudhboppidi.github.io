@@ -1,0 +1,179 @@
+.about {
+  background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-card) 50%, var(--bg-dark) 100%);
+}
+
+.aboutContent {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.aboutImage {
+  position: relative;
+}
+
+.imageContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.imageContainer::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--primary-color);
+  border-radius: 12px;
+  z-index: 0;
+}
+
+.imagePlaceholder {
+  width: 350px;
+  height: 400px;
+  background: var(--bg-card);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  position: relative;
+  z-index: 1;
+  border: 1px solid var(--border-color);
+}
+
+.experienceBadge {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background: var(--gradient-primary);
+  padding: 1.25rem 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  z-index: 2;
+}
+
+.badgeNumber {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.badgeText {
+  display: block;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.aboutText {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.aboutHeading {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.aboutDescription {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.highlights {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.highlightItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.highlightNumber {
+  font-size: 2rem;
+  font-weight: 700;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.highlightLabel {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.aboutCta {
+  margin-top: 1rem;
+}
+
+@media (max-width: 968px) {
+  .aboutContent {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .aboutImage {
+    display: flex;
+    justify-content: center;
+  }
+
+  .imageContainer::before {
+    top: -15px;
+    left: -15px;
+  }
+
+  .imagePlaceholder {
+    width: 280px;
+    height: 320px;
+  }
+
+  .experienceBadge {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -30px;
+  }
+
+  .highlights {
+    justify-content: center;
+  }
+
+  .aboutCta {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .imagePlaceholder {
+    width: 220px;
+    height: 260px;
+  }
+
+  .highlights {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .highlightItem {
+    flex: 1;
+    min-width: 80px;
+  }
+
+  .aboutHeading {
+    font-size: 1.5rem;
+  }
+}
