@@ -200,6 +200,19 @@ a.infoValue:hover {
   font-size: 0.95rem;
 }
 
+.errorMessage {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding: 1rem;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 8px;
+  color: #ef4444;
+  font-size: 0.95rem;
+}
+
 @media (max-width: 968px) {
   .contactContent {
     grid-template-columns: 1fr;

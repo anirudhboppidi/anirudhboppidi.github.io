@@ -1,7 +1,9 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import styles from './Contact.module.css';
 
 const Contact = () => {
+  const formRef = useRef();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -19,15 +21,25 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus(null);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      await emailjs.sendForm(
+        'service_4e6jnax',
+        'template_scxha2d',
+        formRef.current,
+        'j-9ma4E4rsr3FOSVC'
+      );
 
-    setSubmitStatus('success');
-    setFormData({ name: '', email: '', subject: '', message: '' });
-    setIsSubmitting(false);
-
-    setTimeout(() => setSubmitStatus(null), 5000);
+      setSubmitStatus('success');
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch (error) {
+      console.error('Email send failed:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+      setTimeout(() => setSubmitStatus(null), 5000);
+    }
   };
 
   const contactInfo = [
@@ -138,7 +150,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <form className={styles.contactForm} onSubmit={handleSubmit}>
+          <form ref={formRef} className={styles.contactForm} onSubmit={handleSubmit}>
             <div className={styles.formRow}>
               <div className={styles.formGroup}>
                 <label htmlFor="name" className={styles.formLabel}>
@@ -232,6 +244,17 @@ const Contact = () => {
                   <polyline points="22 4 12 14.01 9 11.01"/>
                 </svg>
                 Message sent successfully! I'll get back to you soon.
+              </div>
+            )}
+
+            {submitStatus === 'error' && (
+              <div className={styles.errorMessage}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <line x1="15" y1="9" x2="9" y2="15"/>
+                  <line x1="9" y1="9" x2="15" y2="15"/>
+                </svg>
+                Failed to send message. Please try again or email directly.
               </div>
             )}
           </form>
